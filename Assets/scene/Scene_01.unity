@@ -207,7 +207,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 48b39c6d40be60c41bbceae4bfb77d6a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 15.98
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 48b39c6d40be60c41bbceae4bfb77d6a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -298,6 +298,7 @@ MonoBehaviour:
     xMax: 14
     zMin: 0
     zMax: 45
+  rotationvVaisseau: 1
 --- !u!1 &1228193064
 GameObject:
   m_ObjectHideFlags: 0
