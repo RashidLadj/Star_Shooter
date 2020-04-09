@@ -8,16 +8,35 @@ public class Boundary{
 }
 
 public class Player_Control : MonoBehaviour {
+	/** Vitesse Vaisseau **/
 	public float vitesse;
 	public Boundary boundary;
 	public float rotationvVaisseau;	
-	// Use this for initialization
-	void Start () {
-		
+	public Rigidbody laserJoueur;
+	public Transform canonLaser;
+	public float vitesseTir;
+
+	public Rigidbody lightLaser;
+
+	public float frequenceTir;
+	float tirSuivant;
+
+
+	void Update(){
+		if (Input.GetButtonDown("Fire1") && Time.time>tirSuivant){
+			tirSuivant = Time.time + frequenceTir;
+			Rigidbody munitionLaser;
+			munitionLaser = Instantiate(laserJoueur, canonLaser.position, canonLaser.rotation) as Rigidbody;
+			munitionLaser.AddForce(canonLaser.forward * vitesseTir);
+
+			Rigidbody maLumiereLaser;
+			maLumiereLaser = Instantiate(lightLaser, canonLaser.position, canonLaser.rotation) as Rigidbody;
+			maLumiereLaser.AddForce(canonLaser.forward * vitesseTir);
+		}
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		Rigidbody rigidbody = GetComponent<Rigidbody>();
 		/** Deplacement **/
 		float deplacementHorizontal = Input.GetAxis("Vertical");
