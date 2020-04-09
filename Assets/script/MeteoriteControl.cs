@@ -6,6 +6,9 @@ public class MeteoriteControl : MonoBehaviour {
 	Rigidbody rigidBodyMeteorite;
 	public float vitesseMeteorite;
 	public Vector3 eulerAngleVelocity;
+	public GameObject explosion;
+	/** Collision avec le vaisseau --> Defaite **/
+	public GameObject explosionWithPlayer;
 
 	// Use this for initialization
 	void Start () {
@@ -13,6 +16,14 @@ public class MeteoriteControl : MonoBehaviour {
 		rigidBodyMeteorite.velocity = transform.forward * -vitesseMeteorite;
 	}
 	
+	private void OnTriggerEnter(Collider other) {
+		Destroy(other.gameObject);
+		Destroy(gameObject);
+		if (other.tag== "Player")
+			Instantiate(explosionWithPlayer, transform.position, transform.rotation);
+		else
+			Instantiate(explosion, transform.position, transform.rotation);
+	}	
 	// Update is called once per frame
 	void FixedUpdate () {
 		Quaternion deltaRotation = Quaternion.Euler(eulerAngleVelocity * Time.deltaTime);

@@ -114,6 +114,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vitesseMeteorite: 5
   eulerAngleVelocity: {x: 5, y: 10, z: 50}
+  explosion: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
+  explosionWithPlayer: {fileID: 100010, guid: 760c850a05e387c439783bc13d03f347, type: 2}
 --- !u!114 &114823438095922336
 MonoBehaviour:
   m_ObjectHideFlags: 1
