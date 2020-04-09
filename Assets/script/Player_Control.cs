@@ -18,18 +18,19 @@ public class Player_Control : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		Rigidbody rigidbody = GetComponent<Rigidbody>();
 		/** Deplacement **/
 		float deplacementHorizontal = Input.GetAxis("Vertical");
 		float deplacementVertical = Input.GetAxis("Horizontal");
 		Vector3 mouvement = new Vector3(-deplacementHorizontal, 0, deplacementVertical);
-		GetComponent<Rigidbody>().velocity = mouvement * vitesse;	
+		rigidbody.velocity = mouvement * vitesse;	
 		/** limit Scene ***/
-		GetComponent<Rigidbody>().position = new Vector3(
-			Mathf.Clamp(GetComponent<Rigidbody>().position.x, boundary.xMin, boundary.xMax),
-			GetComponent<Rigidbody>().position.y,
-			Mathf.Clamp(GetComponent<Rigidbody>().position.z, boundary.zMin, boundary.zMax)
+		rigidbody.position = new Vector3(
+			Mathf.Clamp(rigidbody.position.x, boundary.xMin, boundary.xMax),
+			rigidbody.position.y,
+			Mathf.Clamp(rigidbody.position.z, boundary.zMin, boundary.zMax)
 		);
 		/** Rotation **/
-		GetComponent<Rigidbody>().rotation = Quaternion.Euler(0f, 0f, GetComponent<Rigidbody>().velocity.x * -rotationvVaisseau);
+		rigidbody.rotation = Quaternion.Euler(0f, 0f, rigidbody.velocity.x * -rotationvVaisseau);
 	}	
 }
