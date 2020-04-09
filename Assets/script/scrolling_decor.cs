@@ -14,7 +14,7 @@ public class scrolling_decor : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		float offset = Time.time * vitesseDefilement;
-		rend.material.mainTextureOffset = new Vector2(offset, 0);
+		rend.material.mainTextureOffset = new Vector2(0, offset);
 		
 	}
 }
