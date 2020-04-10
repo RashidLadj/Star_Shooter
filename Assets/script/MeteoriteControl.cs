@@ -17,6 +17,7 @@ public class MeteoriteControl : MonoBehaviour {
 	}
 	
 	private void OnTriggerEnter(Collider other) {
+
 		if(other.tag == "Player" || other.tag == "laserPlayer"){
 			Destroy(other.gameObject);
 			Destroy(gameObject);

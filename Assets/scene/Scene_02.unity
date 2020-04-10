@@ -530,7 +530,7 @@ MonoBehaviour:
   - {fileID: 1311383348422074, guid: 3162952b099515d4ab7770c14b34e36e, type: 2}
   - {fileID: 1311383348422074, guid: 3162952b099515d4ab7770c14b34e36e, type: 2}
   - {fileID: 1285225798344412, guid: a74e9e896931d5d4c96eb7b2fccaef3c, type: 2}
-  - {fileID: 1285225798344412, guid: a74e9e896931d5d4c96eb7b2fccaef3c, type: 2}
+  - {fileID: 1311383348422074, guid: 3162952b099515d4ab7770c14b34e36e, type: 2}
   - {fileID: 1285225798344412, guid: a74e9e896931d5d4c96eb7b2fccaef3c, type: 2}
   - {fileID: 1285225798344412, guid: a74e9e896931d5d4c96eb7b2fccaef3c, type: 2}
   - {fileID: 1285225798344412, guid: a74e9e896931d5d4c96eb7b2fccaef3c, type: 2}
@@ -539,9 +539,9 @@ MonoBehaviour:
   - {fileID: 1122473941635106, guid: 2aa5b03e326fd5e4faa09c65de28d94e, type: 2}
   - {fileID: 1311383348422074, guid: 3162952b099515d4ab7770c14b34e36e, type: 2}
   - {fileID: 1311383348422074, guid: 3162952b099515d4ab7770c14b34e36e, type: 2}
-  - {fileID: 1122473941635106, guid: 2aa5b03e326fd5e4faa09c65de28d94e, type: 2}
-  - {fileID: 1122473941635106, guid: 2aa5b03e326fd5e4faa09c65de28d94e, type: 2}
-  - {fileID: 1122473941635106, guid: 2aa5b03e326fd5e4faa09c65de28d94e, type: 2}
+  - {fileID: 1311383348422074, guid: 3162952b099515d4ab7770c14b34e36e, type: 2}
+  - {fileID: 1311383348422074, guid: 3162952b099515d4ab7770c14b34e36e, type: 2}
+  - {fileID: 1311383348422074, guid: 3162952b099515d4ab7770c14b34e36e, type: 2}
   positionVague: {x: 15.6, y: 4.5, z: 60}
   nombreMeteorites: 15
   debutAttente: 1
