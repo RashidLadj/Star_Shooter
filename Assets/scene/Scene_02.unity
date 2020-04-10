@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -301,8 +301,11 @@ MonoBehaviour:
   rotationvVaisseau: 1
   laserJoueur: {fileID: 54084519661707688, guid: af29490d7529bc740b2ccb658fd35649,
     type: 2}
-  canonLaser: {fileID: 1354024327}
+  canonLaser: {fileID: 1496557823}
   vitesseTir: 1500
+  lightLaser: {fileID: 54170790517035406, guid: 9f377db1bc877544d92e5c73f9e617b5,
+    type: 2}
+  frequenceTir: 0.35
 --- !u!1 &1228193064
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,34 +405,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 90, y: 180, z: 0}
---- !u!1 &1354024326
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1354024327}
-  m_Layer: 0
-  m_Name: Canon_Laser
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1354024327
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1354024326}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.9200001, z: -0.30999994}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 983640146}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1362093534
 Prefab:
   m_ObjectHideFlags: 0
@@ -496,6 +471,95 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d8c41be67f41aa545ae053b0b927f821, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1496557822
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1496557823}
+  m_Layer: 0
+  m_Name: CanonLaser
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1496557823
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1496557822}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.9, z: -0.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 983640146}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1794623136
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1794623138}
+  - component: {fileID: 1794623137}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1794623137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1794623136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 298d25bc1fd77a542b9266bf0bb745e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacle:
+  - {fileID: 1311383348422074, guid: 3162952b099515d4ab7770c14b34e36e, type: 2}
+  - {fileID: 1311383348422074, guid: 3162952b099515d4ab7770c14b34e36e, type: 2}
+  - {fileID: 1285225798344412, guid: a74e9e896931d5d4c96eb7b2fccaef3c, type: 2}
+  - {fileID: 1285225798344412, guid: a74e9e896931d5d4c96eb7b2fccaef3c, type: 2}
+  - {fileID: 1285225798344412, guid: a74e9e896931d5d4c96eb7b2fccaef3c, type: 2}
+  - {fileID: 1285225798344412, guid: a74e9e896931d5d4c96eb7b2fccaef3c, type: 2}
+  - {fileID: 1285225798344412, guid: a74e9e896931d5d4c96eb7b2fccaef3c, type: 2}
+  - {fileID: 1122473941635106, guid: 2aa5b03e326fd5e4faa09c65de28d94e, type: 2}
+  - {fileID: 1122473941635106, guid: 2aa5b03e326fd5e4faa09c65de28d94e, type: 2}
+  - {fileID: 1122473941635106, guid: 2aa5b03e326fd5e4faa09c65de28d94e, type: 2}
+  - {fileID: 1311383348422074, guid: 3162952b099515d4ab7770c14b34e36e, type: 2}
+  - {fileID: 1311383348422074, guid: 3162952b099515d4ab7770c14b34e36e, type: 2}
+  - {fileID: 1122473941635106, guid: 2aa5b03e326fd5e4faa09c65de28d94e, type: 2}
+  - {fileID: 1122473941635106, guid: 2aa5b03e326fd5e4faa09c65de28d94e, type: 2}
+  - {fileID: 1122473941635106, guid: 2aa5b03e326fd5e4faa09c65de28d94e, type: 2}
+  positionVague: {x: 15.6, y: 4.5, z: 60}
+  nombreMeteorites: 15
+  debutAttente: 1
+  attenteVague: 2
+  intervalVague: 2
+--- !u!4 &1794623138
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1794623136}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2112818979
 GameObject:
   m_ObjectHideFlags: 0
@@ -518,7 +582,7 @@ Light:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2112818979}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 8
   m_Type: 1
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameController : MonoBehaviour {
-	public GameObject obstacle;
+	public GameObject[] obstacle;
 	public Vector3 positionVague;
 	public int nombreMeteorites;
 	public float debutAttente;
@@ -22,7 +22,7 @@ public class GameController : MonoBehaviour {
 			for (int i=0; i<nombreMeteorites; i++){
 				Vector3 maVague = new Vector3(Random.Range(-positionVague.x, positionVague.x), positionVague.y, positionVague.z);
 				Quaternion rotationVague = Quaternion.identity;
-				Instantiate(obstacle, maVague, rotationVague);
+				Instantiate(obstacle[Random.Range(0,9)], maVague, rotationVague);
 				yield return new WaitForSeconds(attenteVague);
 			}
 			yield return new WaitForSeconds(intervalVague);
