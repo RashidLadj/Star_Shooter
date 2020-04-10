@@ -32,6 +32,9 @@ public class Player_Control : MonoBehaviour {
 			Rigidbody maLumiereLaser;
 			maLumiereLaser = Instantiate(lightLaser, canonLaser.position, canonLaser.rotation) as Rigidbody;
 			maLumiereLaser.AddForce(canonLaser.forward * vitesseTir);
+			/** Gestion du son Laser **/
+			AudioSource audioLaser = GetComponent<AudioSource>();
+			audioLaser.Play();
 		}
 	}
 	

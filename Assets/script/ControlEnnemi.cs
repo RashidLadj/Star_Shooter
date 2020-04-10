@@ -54,6 +54,10 @@ public class ControlEnnemi : MonoBehaviour {
 			Rigidbody maLumiereLaserGauche;
 			maLumiereLaserGauche = Instantiate(lightLaser, canonLaserGauche.position, canonLaserGauche.rotation) as Rigidbody;
 			maLumiereLaserGauche.AddForce(canonLaserGauche.forward * -	vitesseTir);
+
+			/** Gestion du son Laser **/
+			AudioSource audioLaser = GetComponent<AudioSource>();
+			audioLaser.Play();
 		}
 	}
 }
