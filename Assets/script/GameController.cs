@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
 	public GameObject[] obstacle;
@@ -30,7 +31,7 @@ public class GameController : MonoBehaviour {
 		replay.enabled = false;
 		Menu.enabled = false;
 		GameOver.enabled = false;
-		Application.LoadLevel(Application.loadedLevel);
+		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
 
 	public void MenuGame(){
@@ -38,7 +39,7 @@ public class GameController : MonoBehaviour {
 		replay.enabled = false;
 		Menu.enabled = false;
 		GameOver.enabled = false;
-		Application.LoadLevel("MenuAccueil");
+		SceneManager.LoadScene("MenuAccueil");
 	}
 	
 	IEnumerator ApparitionVague () {
