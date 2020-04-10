@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
 	public GameObject[] obstacle;
@@ -9,10 +10,35 @@ public class GameController : MonoBehaviour {
 	public float debutAttente;
 	public float attenteVague;
 	public float intervalVague;
+	public Canvas canvasGameOver;
+	public Button replay;
+	public Button Menu;
+	public Text GameOver;
 
 	// Use this for initialization
 	void Start () {
+		canvasGameOver = canvasGameOver.GetComponent<Canvas>();
+		replay = replay.GetComponent<Button>();
+		Menu = Menu.GetComponent<Button>();
+		GameOver = GameOver.GetComponent<Text>();
+
 		StartCoroutine(ApparitionVague());
+	}
+
+	public void RestartGame(){
+		canvasGameOver.enabled = false;
+		replay.enabled = false;
+		Menu.enabled = false;
+		GameOver.enabled = false;
+		Application.LoadLevel(Application.loadedLevel);
+	}
+
+	public void MenuGame(){
+		canvasGameOver.enabled = false;
+		replay.enabled = false;
+		Menu.enabled = false;
+		GameOver.enabled = false;
+		Application.LoadLevel("MenuAccueil");
 	}
 	
 	IEnumerator ApparitionVague () {

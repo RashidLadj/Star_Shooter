@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class Boundary{
@@ -20,7 +21,28 @@ public class Player_Control : MonoBehaviour {
 
 	public float frequenceTir;
 	float tirSuivant;
+	public Canvas canvasGameOver;
+	public Button replay;
+	public Button Menu;
+	public Text GameOver;
 
+	void Start(){
+		canvasGameOver = canvasGameOver.GetComponent<Canvas>();
+		replay = replay.GetComponent<Button>();
+		Menu = Menu.GetComponent<Button>();
+		GameOver = GameOver.GetComponent<Text>();
+		canvasGameOver.enabled = false;
+		replay.enabled = false;
+		Menu.enabled = false;
+		GameOver.enabled = false;
+	}
+
+	private void OnDestroy() {
+		canvasGameOver.enabled = true;
+		replay.enabled = true;
+		Menu.enabled = true;
+		GameOver.enabled = true;
+	}
 
 	void Update(){
 		if (Input.GetButtonDown("Fire1") && Time.time>tirSuivant){
